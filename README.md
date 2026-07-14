@@ -1,17 +1,20 @@
 # Ximera_mki-NTS-1-digital-kit
 
-Ximera MKI は、Nord Lead 系の明るい VA リード、JP-8080 系の広がる supersaw、Minimoog 系の太い sub と drive を「足して三で割った」ような Nu:Tekt NTS-1 digital kit mkI 向けユーザー oscillator です。
+Ximera MKI は、Nord Lead 系の明るい VA リード、JP-8080 系の広がる supersaw、Minimoog 系の太い sub と drive を「足して三で割った」ような KORG logue SDK v1 向けユーザー oscillator です。
 
-1 oscillator の中で 7 本の band-limited saw、square/parabolic のエッジ、sub oscillator、内部 tone filter、soft drive をまとめています。NTS-1 単体で太い mono lead、広がる chord stab、少し丸い bass を作るための小さな音源です。
+1 oscillator の中で 7 本の band-limited saw、square/parabolic のエッジ、sub oscillator、内部 tone filter、soft drive をまとめています。NTS-1、minilogue xd、prologue で、太い mono lead、広がる chord stab、少し丸い bass を作るための小さな音源です。
 
 ## Download
 
-- Latest built unit: https://github.com/ksd6700/Ximera_mki-NTS-1-digital-kit/releases/latest
+- Latest release: https://github.com/ksd6700/Ximera_mki-NTS-1-digital-kit/releases/latest
+- Nu:Tekt NTS-1 digital kit mkI: `dist/ximera_mki.ntkdigunit`
+- minilogue xd: `dist/ximera_mki.mnlgxdunit`
+- prologue: `dist/ximera_mki.prlgunit`
 - Source repository: https://github.com/ksd6700/Ximera_mki-NTS-1-digital-kit
 - Official logue SDK: https://github.com/korginc/logue-sdk
 - KORG NTS-1 Librarian / updater downloads: https://www.korg.com/us/support/download/product/0/832/
 
-Release assets に `ximera_mki.ntkdigunit` がある場合は、それを KORG NTS-1 Librarian で NTS-1 mkI に転送してください。
+Release assets か `dist/` から自分の機種に合うファイルを選び、KORG Librarian で転送してください。
 
 ## Controls
 
@@ -40,26 +43,31 @@ cd tools/gcc
 ./get_gcc_5_4-2016q3_macos.sh
 ```
 
-Then build Ximera MKI:
+Then build Ximera MKI for all supported SDK v1 synths:
 
 ```sh
 cd /path/to/Ximera_mki-NTS-1-digital-kit
-make package LOGUE_SDK_PATH=/path/to/logue-sdk
+make dist LOGUE_SDK_PATH=/path/to/logue-sdk
 ```
 
-The package will be written to:
+The packages will be written to:
 
 ```text
-ximera_mki.ntkdigunit
+dist/ximera_mki.ntkdigunit
+dist/ximera_mki.mnlgxdunit
+dist/ximera_mki.prlgunit
 ```
+
+For only the NTS-1 mkI package, use `make package`.
 
 ## Compatibility
 
-- Target: Nu:Tekt NTS-1 digital kit mkI
+- Nu:Tekt NTS-1 digital kit mkI: `.ntkdigunit`
+- minilogue xd: `.mnlgxdunit`
+- prologue: `.prlgunit`
 - logue SDK API: `1.1-0`
-- Unit format: `.ntkdigunit`
 
-The NTS-1 mkI shares the logue SDK v1 oscillator format family with prologue and minilogue xd, but this project is tuned and named for NTS-1 digital kit mkI.
+These are logue SDK v1 builds. NTS-1 digital kit mkII, NTS-3 kaoss pad kit, drumlogue, and microKORG2 use newer SDK families and need a separate v2 port.
 
 ## License
 

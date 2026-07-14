@@ -1,5 +1,7 @@
 build/
 *.ntkdigunit
+*.mnlgxdunit
+*.prlgunit
 *.elf
 *.hex
 *.bin
@@ -8,3 +10,7 @@ build/
 *.map
 .dep/
 .DS_Store
+!dist/*.ntkdigunit
+!dist/*.mnlgxdunit
+!dist/*.prlgunit
+!dist/SHA256SUMS.txt
