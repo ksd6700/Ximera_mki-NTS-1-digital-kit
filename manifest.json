@@ -1,0 +1,20 @@
+{
+  "header": {
+    "platform": "nutekt-digital",
+    "module": "osc",
+    "api": "1.1-0",
+    "dev_id": 1483565873,
+    "prg_id": 2016423985,
+    "version": "0.1-0",
+    "name": "XimeraMKI",
+    "num_param": 6,
+    "params": [
+      ["DETUNE", 0, 100, "%"],
+      ["SPREAD", 0, 100, "%"],
+      ["SUB", 0, 100, "%"],
+      ["DRIVE", 0, 100, "%"],
+      ["TONE", -100, 100, "%"],
+      ["MODE", 0, 2, ""]
+    ]
+  }
+}

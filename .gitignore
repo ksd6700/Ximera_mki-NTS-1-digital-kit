@@ -1,0 +1,10 @@
+build/
+*.ntkdigunit
+*.elf
+*.hex
+*.bin
+*.dmp
+*.list
+*.map
+.dep/
+.DS_Store
